@@ -1,36 +1,25 @@
 // This is a JavaScript file
 
-$(document).on('click',"#alertaUm",function(){
-   navigator.notification.alert("Mensagem de alerta 1");
 
-});
-
-$(document).on('click',"#alertaDois",function(){
-  function retorno(){
-
-  }
-   navigator.notification.alert("Mensagem de alerta 2", retorno,"Aviso","Blz" );
-   
-});
-$(document).on('click',"#alertaTres",function(){
-   function onConfirm(buttonIndex){
-     if(buttonIndex == 1){
-      navigator.notification.alert('Escolheu a opção sim!');
-   }else{
-      navigator.notification.alert('Escolheu a opção não!');
-   }
-   }
-
-   navigator.notification.confirm("Escolha sim ou não!",onConfirm,"Escolha", ['Sim','Não']);
-
-});
-$(document).on('click',"#alertaQuatro",function(){
-  navigator.notification.beep(2);
-
-});
 $(document).on('click',"#codigoBarra",function(){
   cordova.plugins.barcodeScanner.scan(
       function (result) {
+        if(result.text == "280720550"){
+          $(location).attr("href","ipad.html");
+        }  
+        if(result.text == "989895555"){
+          $(location).attr("href","galaxyJ8.html");
+        }
+          if(result.text == "85236987"){
+          $(location).attr("href","motoOne.html");
+        }
+          if(result.text == "85369877444"){
+          $(location).attr("href","");
+        }
+         if(result.text == result){
+          $(location).attr("url",result);
+        }
+
           alert("We got a barcode\n" +
                 "Resultado: " + result.text + "\n" +
                 "Formato: " + result.format + "\n" +
