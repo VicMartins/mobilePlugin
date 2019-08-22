@@ -1,6 +1,5 @@
 // This is a JavaScript file
 
-
 $(document).on('click',"#codigoBarra",function(){
   cordova.plugins.barcodeScanner.scan(
       function (result) {
@@ -14,16 +13,10 @@ $(document).on('click',"#codigoBarra",function(){
           $(location).attr("href","motoOne.html");
         }
           if(result.text == "85369877444"){
-          $(location).attr("href","");
+          $(location).attr("href","zenfone.html");
         }
-         if(result.text == result){
-          $(location).attr("url",result);
-        }
-
-          alert("We got a barcode\n" +
-                "Resultado: " + result.text + "\n" +
-                "Formato: " + result.format + "\n" +
-                "Cancelado: " + result.cancelled);
+       
+          
       },
       function (error) {
           alert("Falha na leitura do código: " + error);
