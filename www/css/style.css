@@ -5,4 +5,18 @@ img{
 }
 .container{
   text-align: center;
+   color:white;
+}
+.btn{
+  color:white;
+  background-color: rgba(163, 161, 161, 0.527);
+  border:0;
+  margin-top:270px;
+  border-radius: 15px;
+}
+.btn:hover{
+  background-color: rgba(163, 161, 161, 0.527);
+}
+body{
+  background-image: url("../imagens/fundoCel.png");
 }

@@ -1,25 +1,27 @@
 // This is a JavaScript file
 
 $(document).on('click',"#codigoBarra",function(){
-  cordova.plugins.barcodeScanner.scan(
+   cordova.plugins.barcodeScanner.scan(
       function (result) {
-        if(result.text == "280720550"){
+         if(result.text == "280720550"){
           $(location).attr("href","ipad.html");
         }  
-        if(result.text == "989895555"){
-          $(location).attr("href","galaxyJ8.html");
+        else if(result.text == "989895555"){
+          $(location).attr("href","J8.html");
         }
-          if(result.text == "85236987"){
+        else if(result.text == "85236987"){
           $(location).attr("href","motoOne.html");
         }
-          if(result.text == "85369877444"){
+        else if(result.text == "85369877444"){
           $(location).attr("href","zenfone.html");
         }
+        else {
+      alert("Código não identificado !\nLeitura do código  de barras\n")
        
-          
+         } 
       },
       function (error) {
-          alert("Falha na leitura do código: " + error);
+          alert("Scanning failed: " + error);
       },
       {
           preferFrontCamera : false, // iOS and Android
@@ -35,6 +37,6 @@ $(document).on('click',"#codigoBarra",function(){
           disableSuccessBeep: false // iOS and Android
       }
    );
-
+      
 });
 
